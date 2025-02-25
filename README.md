@@ -24,7 +24,7 @@ Cydia² is an all new Cydia™ experience! Get ready for a wild ride because Cyd
 
 <a href="https://github.com/Lrdsnow"><img src="https://img.shields.io/static/v1?style=social&message=Main Developer&logo=github&logoColor=000000&label=Lrdsnow" /></a>
 
-<a href="https://github.com/saurik"><img src="https://img.shields.io/static/v1?style=social&message=Cydia™&logo=github&logoColor=000000&label=SaurikIT" /></a>
+<a href="https://github.com/saurik"><img src="https://img.shields.io/static/v1?style=social&message=Cydia&logo=github&logoColor=000000&label=SaurikIT" /></a>
 
 <a href="https://github.com/Sileo"><img src="https://img.shields.io/static/v1?style=social&message=APT Wrapper&logo=github&logoColor=000000&label=Sileo" /></a>
 
