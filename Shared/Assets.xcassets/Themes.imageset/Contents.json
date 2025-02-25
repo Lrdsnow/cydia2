@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Tweaks.png",
+      "filename" : "Themes.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Tweaks 1.png",
+      "filename" : "Themes 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Tweaks 2.png",
+      "filename" : "Themes 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -433,7 +433,7 @@ class DepictionMarkdownViewModel: ObservableObject {
         #if os(macOS)
         NSColor.accent.usingColorSpace(.deviceRGB)?.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
         #else
-        UIColor.accent.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        //UIColor.accent.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
         #endif
         red *= 255
         green *= 255
@@ -453,7 +453,7 @@ class DepictionMarkdownViewModel: ObservableObject {
             let down = Down(markdownString: htmlString)
             var config = DownStylerConfiguration()
             var colors = DepictionColorCollection()
-            colors.link = .accent
+            //colors.link = .accent
             config.colors = colors
             config.fonts = DepictionFontCollection()
             let styler = DownStyler(configuration: config)

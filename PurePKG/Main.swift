@@ -95,15 +95,28 @@ struct PurePKGApp: App {
     @State private var importedPackage: Package? = nil
     @State private var showPackage = false
     
+//    init() {
+//        #if os(iOS)
+//        UINavigationBar.appearance().prefersLargeTitles = true
+//        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color.accentColor)]
+//        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color.accentColor)]
+//        UITableView.appearance().backgroundColor = .clear
+//        UITableView.appearance().separatorStyle = .none
+//        UITableView.appearance().separatorColor = .clear
+//        #endif
+//    }
+    
     init() {
-        #if os(iOS)
-        UINavigationBar.appearance().prefersLargeTitles = true
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color.accentColor)]
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color.accentColor)]
-        UITableView.appearance().backgroundColor = .clear
-        UITableView.appearance().separatorStyle = .none
-        UITableView.appearance().separatorColor = .clear
-        #endif
+        if #available(iOS 16, *) {
+            var layoutConfig = UICollectionLayoutListConfiguration(appearance: .grouped)
+            layoutConfig.headerMode = .supplementary
+            layoutConfig.headerTopPadding = 0
+            layoutConfig.footerMode = .supplementary
+            let listLayout = UICollectionViewCompositionalLayout.list(using: layoutConfig)
+            UICollectionView.appearance().collectionViewLayout = listLayout
+        } else {
+            UITableView.appearance().sectionFooterHeight = 0
+        }
     }
     
     var body: some Scene {
@@ -115,7 +128,7 @@ struct PurePKGApp: App {
             #else
             ContentView(tab: $tab, importedPackage: $importedPackage, showPackage: $showPackage, preview: false)
                 .environmentObject(appData)
-                .setAccentColor()
+//                .setAccentColor()
             #endif
         }
         #if os(macOS)
@@ -126,6 +139,8 @@ struct PurePKGApp: App {
 }
 
 // Main
+
+#if false
 
 #if os(watchOS)
 struct ContentViewWatchOS: View {
@@ -458,4 +473,6 @@ struct ContentView: View {
     }
 #endif
 }
+#endif
+
 #endif
